@@ -8,5 +8,17 @@ export const environment = {
   apps: [{
     name: 'dashboard-app',
     route: ''
+  }],
+  proxies: [{
+    desc: 'Go Sample Server with Info',
+    host: 'http://127.0.0.1:8001',
+    root: "/api_2/go",
+    prefix: '/api_2/go',
+    suffix: '',
+    pHeaders: {
+      'content-type': 'application/json',
+      'accept': 'application/json'
+    },
+    eHeaders: ['connection']
   }]
 };

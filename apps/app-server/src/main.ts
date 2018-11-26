@@ -5,5 +5,6 @@ env.environment['NODE_ENV'] = process.env['NODE_ENV'] || 'development';
 env.environment['NODE_PUBLIC_PATH'] = '../public';
 
 Server.initServer( env ).then( server => {
+  server['configProxies']();
   server['configStaticApps']();
 });

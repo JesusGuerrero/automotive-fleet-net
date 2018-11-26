@@ -1,7 +1,11 @@
-<div style="text-align:center">
+<div>
+  <a [routerLink]="['/']" *ngIf="view !== '/'">Back</a>
   <h1>{{ title }}</h1>
-  <img
-    width="300"
-    src="../assets/car.jpg"
-  />
+  <ng-container [ngSwitch]="view">
+    <img *ngSwitchCase="'/info'" src="" />
+    <img *ngSwitchDefault
+         width="300"
+         src="../assets/car.jpg" />
+  </ng-container>
+  <router-outlet></router-outlet>
 </div>

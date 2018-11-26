@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve app-server",
+    "watch": "ng build dashboard-app --watch",
     "build": "ng build dashboard-app",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
@@ -43,6 +44,7 @@
     "core-js": "^2.5.4",
     "express": "4.16.3",
     "mahrio": "^1.6.0",
+    "request": "^2.88.0",
     "rxjs": "~6.3.3",
     "socket.io": "^2.1.1",
     "zone.js": "^0.8.26"
