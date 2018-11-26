@@ -59,6 +59,129 @@
           }
         }
       }
+    },
+    "dashboard-app": {
+      "root": "apps/dashboard-app/",
+      "sourceRoot": "apps/dashboard-app/src",
+      "projectType": "application",
+      "prefix": "automotive-fleet-net",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dashboard-app",
+            "index": "apps/dashboard-app/src/index.html",
+            "main": "apps/dashboard-app/src/main.ts",
+            "polyfills": "apps/dashboard-app/src/polyfills.ts",
+            "tsConfig": "apps/dashboard-app/tsconfig.app.json",
+            "assets": [
+              "apps/dashboard-app/src/favicon.ico",
+              "apps/dashboard-app/src/assets"
+            ],
+            "styles": [
+              "apps/dashboard-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dashboard-app/src/environments/environment.ts",
+                  "with": "apps/dashboard-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dashboard-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dashboard-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dashboard-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dashboard-app/tsconfig.app.json",
+              "apps/dashboard-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/dashboard-app/jest.config.js",
+            "tsConfig": "apps/dashboard-app/tsconfig.spec.json",
+            "setupFile": "apps/dashboard-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "dashboard-app-e2e": {
+      "root": "apps/dashboard-app-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/dashboard-app-e2e/cypress.json",
+            "tsConfig": "apps/dashboard-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dashboard-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dashboard-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/dashboard-app-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

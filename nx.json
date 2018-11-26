@@ -10,6 +10,12 @@
   "projects": {
     "app-server": {
       "tags": []
+    },
+    "dashboard-app": {
+      "tags": []
+    },
+    "dashboard-app-e2e": {
+      "tags": []
     }
   }
 }
