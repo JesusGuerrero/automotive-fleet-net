@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Fleet Net';
+  driveState = 'Parked';
   view;
   constructor(private router: Router, private route: ActivatedRoute) {
     router.events.subscribe( res => {

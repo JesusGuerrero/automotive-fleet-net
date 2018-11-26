@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$fa-font-path: '../../../node_modules/font-awesome-sass/assets/fonts/font-awesome/';
+@import "../../../node_modules/font-awesome-sass/assets/stylesheets/font-awesome";
+
+body {
+  background: #333;
+  button, h1.mat-line, p {
+    color: #c0c0c0 !important;
+  }
+  color: #c0c0c0 !important;
+}

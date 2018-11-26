@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   PORT: 8000,
+  NODE_URL: '0.0.0.0',
   apps: [{
     name: 'dashboard-app',
     route: ''

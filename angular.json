@@ -85,7 +85,8 @@
               "apps/dashboard-app/src/assets"
             ],
             "styles": [
-              "apps/dashboard-app/src/styles.scss"
+              "apps/dashboard-app/src/styles.scss",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           },
@@ -119,7 +120,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dashboard-app:build"
+            "browserTarget": "dashboard-app:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
