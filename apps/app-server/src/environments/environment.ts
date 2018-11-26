@@ -3,5 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  PORT: 8000,
+  apps: [{
+    name: 'dashboard-app',
+    route: ''
+  }]
 };

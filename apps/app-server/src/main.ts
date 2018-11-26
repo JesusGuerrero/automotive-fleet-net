@@ -1,20 +1,9 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- **/
+import { Server } from "./app/server";
+import * as env from './environments/environment';
+env.environment['baseUrl'] = __dirname;
+env.environment['NODE_ENV'] = process.env['NODE_ENV'] || 'development';
+env.environment['NODE_PUBLIC_PATH'] = '../public';
 
-import * as express from 'express';
-
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send(`Welcome to app-server!`);
-});
-
-const port = 3333;
-app.listen(port, (err) => {
-  if (err) {
-    console.error(err);
-  }
-  console.log(`Listening at http://localhost:${port}`);
+Server.initServer( env ).then( server => {
+  server['configStaticApps']();
 });

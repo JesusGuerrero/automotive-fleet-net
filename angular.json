@@ -13,9 +13,10 @@
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/app-server",
+            "outputPath": "server/development/",
             "main": "apps/app-server/src/main.ts",
             "tsConfig": "apps/app-server/tsconfig.app.json",
+            "sourceMap": true,
             "assets": [
               "apps/app-server/src/assets"
             ]
@@ -74,8 +75,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/dashboard-app",
-            "index": "apps/dashboard-app/src/index.html",
+            "outputPath": "server/public/dashboard-app/development",
+            "index": "apps/dashboard-app/src/index.development.html",
             "main": "apps/dashboard-app/src/main.ts",
             "polyfills": "apps/dashboard-app/src/polyfills.ts",
             "tsConfig": "apps/dashboard-app/tsconfig.app.json",
