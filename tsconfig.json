@@ -16,6 +16,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@automotive-fleet-net/shared": [
+        "libs/shared/src/index.ts"
+      ]
     }
   },
   "exclude": [

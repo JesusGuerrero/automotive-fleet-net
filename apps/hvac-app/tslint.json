@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "automotive-fleet-net",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "automotive-fleet-net",
+      "kebab-case"
+    ]
+  }
+}

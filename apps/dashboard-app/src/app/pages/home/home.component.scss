@@ -7,6 +7,46 @@ i {
     padding: 20px;
     width: 100%;
     margin: 5px 0 20px;
-    font-size: 20pt;
+    font-size: 17pt;
   }
+
+}
+mat-list-item.two {
+  min-height: 72px;
+  padding-top: 15px;
+}
+h1 {
+  i {
+    &.fa {
+      position: absolute;
+      left: 15px;
+    }
+    &.fa.two {
+      top: 25px;
+    }
+    &.fa.fa-chevron-right {
+      left: auto;
+      right: 15px;
+    }
+  }
+}
+button.nav {
+  position: absolute;
+  left: 10px;
+  i {
+    line-height: 24px;
+  }
+}
+.fa-cog {
+  font-size: 18pt;
+}
+.heading {
+  .info {
+    img {
+      width: 80%;
+    }
+  }
+}
+/deep/.mat-menu-content {
+  background: #444444;
 }

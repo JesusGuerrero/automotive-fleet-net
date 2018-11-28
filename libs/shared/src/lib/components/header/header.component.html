@@ -1,0 +1,30 @@
+<mat-grid-list cols="12" rowHeight="50px">
+  <mat-grid-tile colspan="3" rowspan="1" style.background="#333333">
+    <ng-container [ngSwitch]="view">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="nav text-left btn-block pl-3" *ngSwitchCase="'/'">
+        <i class="fa fa-cog fa-2x"></i>
+      </button>
+      <button *ngSwitchDefault class="text-left btn-block pl-3" (click)="util.tryRoute( dynamicLink )">
+        <i class="fa fa-arrow-left"></i>&nbsp;
+        Back
+      </button>
+    </ng-container>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="6" rowspan="1" style.background="#333333">
+    <a href="/" class="text-white">My Auto</a>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <i class="fa fa-phone"></i>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+
+    <span>Check voicemail</span>
+  </button>
+  <button mat-menu-item>
+
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>

@@ -185,6 +185,159 @@
           }
         }
       }
+    },
+    "hvac-app": {
+      "root": "apps/hvac-app/",
+      "sourceRoot": "apps/hvac-app/src",
+      "projectType": "application",
+      "prefix": "automotive-fleet-net",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "server/public/hvac-app/development",
+            "index": "apps/hvac-app/src/index.development.html",
+            "main": "apps/hvac-app/src/main.ts",
+            "polyfills": "apps/hvac-app/src/polyfills.ts",
+            "tsConfig": "apps/hvac-app/tsconfig.app.json",
+            "assets": [
+              "apps/hvac-app/src/favicon.ico",
+              "apps/hvac-app/src/assets"
+            ],
+            "styles": [
+              "apps/hvac-app/src/styles.scss"
+            ],
+            "scripts": [],
+            "deployUrl": "/hvac/",
+            "baseHref": "/hvac"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/hvac-app/src/environments/environment.ts",
+                  "with": "apps/hvac-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "hvac-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hvac-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hvac-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/hvac-app/tsconfig.app.json",
+              "apps/hvac-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/hvac-app/jest.config.js",
+            "tsConfig": "apps/hvac-app/tsconfig.spec.json",
+            "setupFile": "apps/hvac-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "hvac-app-e2e": {
+      "root": "apps/hvac-app-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/hvac-app-e2e/cypress.json",
+            "tsConfig": "apps/hvac-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "hvac-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "hvac-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/hvac-app-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "projectType": "library",
+      "prefix": "automotive-fleet-net",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/tsconfig.lib.json",
+              "libs/shared/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "tsConfig": "libs/shared/tsconfig.spec.json",
+            "setupFile": "libs/shared/src/test-setup.ts"
+          }
+        }
+      }
     }
   },
   "cli": {

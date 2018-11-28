@@ -1,48 +1,5 @@
 <div>
-  <mat-grid-list cols="12" rowHeight="50px">
-    <mat-grid-tile colspan="3" rowspan="1" style.background="#333333">
-      <ng-container [ngSwitch]="view">
-        <button mat-icon-button [matMenuTriggerFor]="menu" *ngSwitchCase="'/'" class="nav">
-          <i class="fa fa-cog fa-2x"></i>
-        </button>
-        <button [routerLink]="['/']" *ngSwitchDefault class="nav">
-          <i class="fa fa-arrow-left"></i>&nbsp;
-          Back</button>
-      </ng-container>
-
-    </mat-grid-tile>
-    <mat-grid-tile colspan="6" rowspan="1" style.background="#333333">
-      My Tesla
-    </mat-grid-tile>
-  </mat-grid-list>
-
-
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
-  </mat-menu>
-
-  <div class="heading">
-    <ng-container [ngSwitch]="view">
-      <div class="info text-center" *ngSwitchCase="'/'">
-        <h3><i class="fa fa-battery-half"></i> 178 mi</h3>
-        <h5>{{ driveState }}</h5>
-        <img src="../assets/car.jpg" />
-      </div>
-      <div *ngSwitchDefault></div>
-    </ng-container>
-  </div>
-
+  <automotive-fleet-net-header [dynamicLink]="true"></automotive-fleet-net-header>
 
   <router-outlet></router-outlet>
 </div>

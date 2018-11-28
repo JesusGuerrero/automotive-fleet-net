@@ -7,6 +7,9 @@ export const environment = {
   PORT: 8000,
   NODE_URL: '0.0.0.0',
   apps: [{
+    name: 'hvac-app',
+    route: '/hvac'
+  }, {
     name: 'dashboard-app',
     route: ''
   }],

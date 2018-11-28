@@ -72,6 +72,7 @@ export class Server {
           path: app.route + '/{any}',
           method: 'GET',
           handler: (req, rep) => {
+            // debugger;
             if( fs.existsSync(this.env['baseUrl'] + '/../public/' + app.name + '/' + this.env['NODE_ENV'] + '/'+req.params.any ) ) {
               rep.file(app.name  + '/' + this.env['NODE_ENV'] + '/'+req.params.any);
             } else {
@@ -83,6 +84,7 @@ export class Server {
           path: app.route + '/{any*}',
           method: 'GET',
           handler: (req, rep) => {
+            // debugger;
             if (this.env.proxies.map( p => p.root).indexOf('/'+req.params.any) === -1  ) {
               if (req.params.any) {
                 if (fs.existsSync(this.env['baseUrl'] + '/../public/' + app.name + '/' + this.env['NODE_ENV'] + '/' + req.params.any)) {

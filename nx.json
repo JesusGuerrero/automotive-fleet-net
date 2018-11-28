@@ -16,6 +16,15 @@
     },
     "dashboard-app-e2e": {
       "tags": []
+    },
+    "hvac-app": {
+      "tags": []
+    },
+    "hvac-app-e2e": {
+      "tags": []
+    },
+    "shared": {
+      "tags": []
     }
   }
 }

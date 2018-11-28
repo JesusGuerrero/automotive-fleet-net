@@ -8,6 +8,7 @@ import { InfoComponent } from './pages/info/info.component';
 import { HomeComponent } from './pages/home/home.component';
 import {MatGridListModule, MatIconModule, MatListModule, MatMenuModule} from "@angular/material";
 import { ControlsComponent } from './pages/controls/controls.component';
+import {SharedModule} from "@automotive-fleet-net/shared";
 
 const routes: Routes = [{
     path: '',
@@ -27,9 +28,7 @@ const routes: Routes = [{
     NxModule.forRoot(),
     RouterModule.forRoot(routes),
     MatListModule,
-    MatIconModule,
-    MatMenuModule,
-    MatGridListModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
