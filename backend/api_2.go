@@ -6,23 +6,21 @@ import (
   "encoding/json"
 )
 
-type response struct {
-    Vin   string      `json:"vin"`
-    Model string   `json:"model"`
-    Color string   `json:"color"`
-    Sunroof bool `json:"sunroof"`
-    Dualmotor bool `json:"dualMotor"`
+type Attribute struct {
+  Key string  `json:"key"`
+  Value string `json:"value"`
 }
 
 func getStatic(w http.ResponseWriter, r *http.Request) {
-  res2D := &response{
-          Vin:   "1FAFP53S0XA130886",
-          Model: "X",
-          Color: "Black",
-          Sunroof: true,
-          Dualmotor: true}
-      res, _ := json.Marshal(res2D)
-      w.Write( []byte(res) )
+  var vehicleInfo [5]Attribute
+
+  vehicleInfo[0] = Attribute{Key: "Model", Value: "X"}
+  vehicleInfo[1] = Attribute{Key: "Color", Value: "Black"}
+  vehicleInfo[2] = Attribute{Key: "Wheels", Value: "21\" grey turbines"}
+  vehicleInfo[3] = Attribute{Key: "Sunroof", Value: "true"}
+  vehicleInfo[4] = Attribute{Key: "Dual Motor", Value: "true"}
+  res, _ := json.Marshal(vehicleInfo)
+  w.Write( []byte(res) )
 }
 
 func main() {

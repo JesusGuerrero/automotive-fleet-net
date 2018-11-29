@@ -11,7 +11,9 @@
     </ng-container>
   </mat-grid-tile>
   <mat-grid-tile colspan="6" rowspan="1" style.background="#333333">
-    <a href="/" class="text-white">My Auto</a>
+    <a href="/" class="text-white" *ngIf="view == '/'">Car Dash</a>
+    <a href="/" class="text-white" *ngIf="view == '/info'">Car Info</a>
+    <a href="/" class="text-white" *ngIf="title">{{title}}</a>
   </mat-grid-tile>
 </mat-grid-list>
 <mat-menu #menu="matMenu">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarFacade } from "@automotive-fleet-net/shared";
 
 @Component({
   selector: 'automotive-fleet-net-info',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent implements OnInit {
-
-  constructor() { }
+  infoLoading$ = this.carFacade.loaded$;
+  info$ = this.carFacade.info$;
+  constructor(private carFacade: CarFacade) {
+    carFacade.loadInfo();
+  }
 
   ngOnInit() {
+
+    this.info$.subscribe( val => {
+      console.log(val);
+    });
   }
 
 }

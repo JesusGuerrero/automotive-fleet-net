@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {UtilService} from "@automotive-fleet-net/shared";
+import {CarFacade, UtilService} from "@automotive-fleet-net/shared";
 
 @Component({
   selector: 'automotive-fleet-net-home',
@@ -8,6 +8,9 @@ import {UtilService} from "@automotive-fleet-net/shared";
 })
 export class HomeComponent {
   driveState = 'Parked';
-  constructor(public util: UtilService) { }
+  hvac$ = this.carFacade.hvac$;
+  constructor(public util: UtilService, private carFacade: CarFacade) {
+    carFacade.loadHvac();
+  }
 
 }

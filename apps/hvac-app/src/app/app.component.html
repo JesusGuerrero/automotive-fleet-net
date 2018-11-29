@@ -1,5 +1,44 @@
-<automotive-fleet-net-header [dynamicLink]="false"></automotive-fleet-net-header>
+<automotive-fleet-net-header [dynamicLink]="false" [title]="'CLIMATE'"></automotive-fleet-net-header>
 
 <div class="container">
-  <h1>HVAC</h1>
+  <mat-card class="hvac">
+    <img src="/hvac/assets/car.png" mat-card-image>
+    <mat-card-footer style="margin-top: -200px">
+      <div class="row text-white">
+        <div class="col-8 offset-2">
+          <div class="row">
+            <div class="col-3 arrow">
+              <i class="fa fa-chevron-left" (click)="lowerTemp()"></i>
+            </div>
+            <div class="col-6 temp">
+              {{(hvac$ | async)?.temp}}<span class="degree">o</span>
+            </div>
+            <div class="col-3 arrow">
+              <i class="fa fa-chevron-right" (click)="raiseTemp()"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="row">
+        <div class="col-4 offset-4">
+          <button class="mt-2 btn btn-block btn-outline-dark" (click)="hvacPower = !hvacPower">TURN {{hvacPower ? 'ON' : 'OFF'}}</button>
+        </div>
+      </div>
+      <div class="row" [hidden]="hvacPower">
+        <div class="col-12">
+          <h2 class="text-white">Fan Speed</h2>
+          <mat-slider
+            class="example-margin"
+            max="5"
+            min="1"
+            step="1"
+            (change)="fanSpeedChanged($event)"
+            [value]="(hvac$ | async)?.fanSpeed"
+            color="primary">
+          </mat-slider>
+        </div>
+      </div>
+    </mat-card-footer>
+  </mat-card>
 </div>

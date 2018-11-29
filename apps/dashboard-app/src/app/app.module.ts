@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { InfoComponent } from './pages/info/info.component';
 import { HomeComponent } from './pages/home/home.component';
-import {MatGridListModule, MatIconModule, MatListModule, MatMenuModule} from "@angular/material";
+import {MatGridListModule, MatListModule, MatSlideToggleModule} from "@angular/material";
 import { ControlsComponent } from './pages/controls/controls.component';
-import {SharedModule} from "@automotive-fleet-net/shared";
+import { SharedModule } from "@automotive-fleet-net/shared";
+import { StoreModule } from "@ngrx/store";
+import { storeFreeze } from "ngrx-store-freeze";
+import { EffectsModule } from "@ngrx/effects";
 
 const routes: Routes = [{
     path: '',
@@ -28,7 +31,13 @@ const routes: Routes = [{
     NxModule.forRoot(),
     RouterModule.forRoot(routes),
     MatListModule,
-    SharedModule
+    MatGridListModule,
+    MatSlideToggleModule,
+    SharedModule,
+    StoreModule.forRoot({}, {
+      metaReducers: [storeFreeze]
+    }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

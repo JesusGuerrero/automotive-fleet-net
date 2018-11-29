@@ -1,3 +1,33 @@
-<p>
-  info works!
-</p>
+<div *ngIf="!(infoLoading$ | async )">
+  Loading...
+</div>
+
+<div class="container">
+  <h4>Identity</h4>
+  <div class="row mb-5">
+    <div class="col-5 text-right">
+      Vin:
+    </div>
+    <div class="col-5">
+      1FAFP53S0XA130886
+    </div>
+  </div>
+  <h4>Auto Configurations</h4>
+  <div *ngFor="let data of (info$ | async)" class="pt-2 pb-2">
+    <div class="row">
+      <div class="col-5 text-right">
+        {{data?.key}}:
+      </div>
+      <div class="col-5">
+        {{data?.value}}
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+
+<!--
+ON ERROR, SHOW INSTRUCTIONS HOW TO CHECK DOWNSTREAM SETUP IS WORKING.
+
+HAVE OPTION TO SWITCH BACKEND ON/OFF IN NGRX STATE USING ENVIRONMENT FILE
+-->

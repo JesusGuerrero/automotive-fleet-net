@@ -1,0 +1,30 @@
+.hvac {
+  text-align: center;
+  background: none;
+  box-shadow: none;
+  img {
+    width: 85%;
+    margin: 0 auto;
+  }
+  .arrow {
+    font-size: 25pt;
+    margin-top: -35px;
+  }
+  .temp {
+    font-size: 60pt;
+    margin-top: -75px;
+    span {
+      font-size: 20px;
+      position: absolute;
+      top: 25px;
+    }
+  }
+  mat-divider {
+    border: 1px solid #FFF;
+    color: #FFF;
+  }
+  button {
+    border: 1px solid #fff;
+    background: rgba(0,0,0,.5);
+  }
+}

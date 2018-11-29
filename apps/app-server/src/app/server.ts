@@ -26,7 +26,9 @@ export class Server {
     this.env = config['environment'];
   }
   set handleServer( server ) { this.app = server; }
+  get server() { return this.app; }
   set handleIO( io ) { this.io = io; }
+  get webSockets() { return this.io; }
 
   configProxies() {
     if( this.env['proxies'] ) {

@@ -33,7 +33,7 @@
   <mat-list-item (click)="util.goTo('/hvac')">
     <h1 matLine class="pl-4"> <i class="fa fa-thermometer-half two"></i> CLIMATE <i class="fa fa-chevron-right pull-right two"></i></h1>
     <p matLine class="pl-4">
-      <span> Interior : 80 F</span>
+      <span> Interior : {{(hvac$ | async)?.temp}} F</span>
     </p>
   </mat-list-item>
   <mat-divider></mat-divider>

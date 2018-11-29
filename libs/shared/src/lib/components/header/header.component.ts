@@ -9,6 +9,7 @@ import { UtilService } from "../../services/util.service";
 })
 export class HeaderComponent implements OnInit {
   @Input() dynamicLink = false;
+  @Input() title;
   public view = 'child';
   constructor(private router: Router, public util: UtilService) { }
 
