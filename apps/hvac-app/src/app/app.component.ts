@@ -11,9 +11,6 @@ export class AppComponent {
   hvac$ = this.carFacade.hvac$;
   constructor( private carFacade: CarFacade) {
     carFacade.loadHvac();
-    this.hvac$.subscribe( val => {
-      console.log(val);
-    })
   }
   raiseTemp() {
     this.carFacade.raiseTemp();

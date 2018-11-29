@@ -11,7 +11,16 @@ The build artifacts will be stored in the `server/` directory.
 
 ## Start
 
-Run `npm start` to start the project.
+Run `npm run start:server` to start the project.
+
+Open Chrome browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+__Note:__ _The is a Go Script used to run a downstream server with Car Information._
+ _You can run this server as_ 
+
+* `go run backend/api_2.go`
+
+_the Go Server provides JSON Data for the Car Info Page View_
 
 ## Run Unit Tests
 
@@ -25,9 +34,11 @@ Run `npm run e2e <project-name>` where *&lt;project-name&gt;* is one of the foll
 
 * dashboard-app-e2e
 * hvac-app
-* ...
+* shared
 
 The E2E tests execute using [Cypress](https://www.cypress.io/).
+
+__Note:__ Before you run E2E make sure you have `npm run start:server` running.
 
 ## Further help
 

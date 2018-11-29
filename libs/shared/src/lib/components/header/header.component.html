@@ -4,7 +4,7 @@
       <button mat-icon-button [matMenuTriggerFor]="menu" class="nav text-left btn-block pl-3" *ngSwitchCase="'/'">
         <i class="fa fa-cog fa-2x"></i>
       </button>
-      <button *ngSwitchDefault class="text-left btn-block pl-3" (click)="util.tryRoute( dynamicLink )">
+      <button *ngSwitchDefault class="text-left btn-block pl-3 back-button" (click)="util.tryRoute( dynamicLink )">
         <i class="fa fa-arrow-left"></i>&nbsp;
         Back
       </button>
@@ -13,6 +13,7 @@
   <mat-grid-tile colspan="6" rowspan="1" style.background="#333333">
     <a href="/" class="text-white" *ngIf="view == '/'">Car Dash</a>
     <a href="/" class="text-white" *ngIf="view == '/info'">Car Info</a>
+    <a href="/" class="text-white" *ngIf="view == '/controls'">Car Controls</a>
     <a href="/" class="text-white" *ngIf="title">{{title}}</a>
   </mat-grid-tile>
 </mat-grid-list>

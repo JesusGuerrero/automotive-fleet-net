@@ -157,28 +157,22 @@
         }
       }
     },
-    "dashboard-app-e2e": {
-      "root": "apps/dashboard-app-e2e",
+    "integration-e2e": {
+      "root": "apps/integration-e2e",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@nrwl/builders:cypress",
           "options": {
-            "cypressConfig": "apps/dashboard-app-e2e/cypress.json",
-            "tsConfig": "apps/dashboard-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "dashboard-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "dashboard-app:serve:production"
-            }
+            "cypressConfig": "apps/integration-e2e/cypress.json",
+            "tsConfig": "apps/integration-e2e/tsconfig.e2e.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/dashboard-app-e2e/tsconfig.e2e.json",
+            "tsConfig": "apps/integration-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -278,35 +272,6 @@
             "jestConfig": "apps/hvac-app/jest.config.js",
             "tsConfig": "apps/hvac-app/tsconfig.spec.json",
             "setupFile": "apps/hvac-app/src/test-setup.ts"
-          }
-        }
-      }
-    },
-    "hvac-app-e2e": {
-      "root": "apps/hvac-app-e2e",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/builders:cypress",
-          "options": {
-            "cypressConfig": "apps/hvac-app-e2e/cypress.json",
-            "tsConfig": "apps/hvac-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "hvac-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "hvac-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/hvac-app-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }

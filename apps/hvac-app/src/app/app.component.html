@@ -11,7 +11,10 @@
               <i class="fa fa-chevron-left" (click)="lowerTemp()"></i>
             </div>
             <div class="col-6 temp">
-              {{(hvac$ | async)?.temp}}<span class="degree">o</span>
+              <div class="hvac-temp" *ngIf="(hvac$ | async)?.temp">
+                {{(hvac$ | async)?.temp}}
+              </div>
+              <span class="degree">o</span>
             </div>
             <div class="col-3 arrow">
               <i class="fa fa-chevron-right" (click)="raiseTemp()"></i>

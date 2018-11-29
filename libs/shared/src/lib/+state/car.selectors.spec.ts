@@ -21,7 +21,10 @@ describe('Car Selectors', () => {
         ],
         selectedId: 'PRODUCT-BBB',
         error: ERROR_MSG,
-        loaded: true
+        loaded: true,
+        info: {
+          loaded: true
+        }
       }
     };
   });
@@ -35,12 +38,6 @@ describe('Car Selectors', () => {
       expect(selId).toBe('PRODUCT-BBB');
     });
 
-    it('getSelectedCar() should return the selected Entity', () => {
-      const result = carQuery.getSelectedCar(storeState);
-      const selId = getCarId(result);
-
-      expect(selId).toBe('PRODUCT-BBB');
-    });
 
     it("getLoaded() should return the current 'loaded' status", () => {
       const result = carQuery.getLoaded(storeState);

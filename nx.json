@@ -14,13 +14,10 @@
     "dashboard-app": {
       "tags": []
     },
-    "dashboard-app-e2e": {
-      "tags": []
-    },
     "hvac-app": {
       "tags": []
     },
-    "hvac-app-e2e": {
+    "integration-e2e": {
       "tags": []
     },
     "shared": {

@@ -22,18 +22,18 @@
   </div>
 
   <mat-divider></mat-divider>
-  <mat-list-item [routerLink]="['/info']" class="two">
+  <mat-list-item [routerLink]="['/info']" class="two car-info">
     <h1 matLine class="pl-4"> <i class="fa fa-info-circle"></i> INFO <i class="fa fa-chevron-right pull-right"></i> </h1>
   </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item [routerLink]="['/controls']" class="two">
+  <mat-list-item [routerLink]="['/controls']" class="two car-controls">
     <h1 matLine class="pl-4"> <i class="fa fa-car"></i> CONTROLS <i class="fa fa-chevron-right pull-right"></i></h1>
   </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item (click)="util.goTo('/hvac')">
+  <mat-list-item (click)="util.goTo('/hvac')" class="car-hvac">
     <h1 matLine class="pl-4"> <i class="fa fa-thermometer-half two"></i> CLIMATE <i class="fa fa-chevron-right pull-right two"></i></h1>
     <p matLine class="pl-4">
-      <span> Interior : {{(hvac$ | async)?.temp}} F</span>
+      Interior : <span class="dash-temp" *ngIf="(hvac$ | async)?.temp">{{(hvac$ | async)?.temp}}</span> F
     </p>
   </mat-list-item>
   <mat-divider></mat-divider>

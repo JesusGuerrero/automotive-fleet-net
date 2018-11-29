@@ -11,12 +11,15 @@
     margin-top: -35px;
   }
   .temp {
-    font-size: 60pt;
-    margin-top: -75px;
+    div.hvac-temp {
+      font-size: 60pt;
+      margin-top: -75px;
+    }
     span {
       font-size: 20px;
       position: absolute;
-      top: 25px;
+      top: -55px;
+      right: 10px;
     }
   }
   mat-divider {
