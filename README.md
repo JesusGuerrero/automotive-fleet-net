@@ -38,9 +38,7 @@ __Note:__ Before you run E2E make sure you have `npm run start:server` running.
 
 ## Demo
 
-<video width="414" height="736" controls>
-  <source src="https://github.com/JesusGuerrero/automotive-fleet-net/blob/master/demo/auto-flee-net-demo.mov">
-</video>
+[Video Demo](https://github.com/JesusGuerrero/automotive-fleet-net/blob/master/demo/auto-flee-net-demo.mov?raw=true)
 
 ## Further help
 
